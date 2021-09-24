@@ -1,0 +1,1940 @@
+
+    @extends('frontend.master')
+    @section('title')
+        Home:: Serve Human Fundation
+    @endsection
+@section('costomcss')
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@700&display=swap');
+
+    .sc_donations_column-1_3, .sc_donations_column-2_6, .sc_donations_column-3_9, .sc_donations_column-4_12{
+        width: 100%!important;
+    }
+  *{
+       scroll-behavior: smooth;
+  }
+  u.hedtext {
+   margin-left: 18px;
+    color: #8d1b1b;
+}
+    .bgprimary h5 {
+        font-family: 'Hind Siliguri', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 29px;
+        color: #000;
+    }
+    .bgprimary {
+        background: linear-gradient(45deg,#5a00dd,#684efb);
+        margin-left:20px;
+        margin-right:20px;
+        border-radius:30px;
+        margin-bottom:20px;
+    }
+    .btndanger{
+        background: linear-gradient(335.64deg,#ff589b -19.22%,#ff136f 118.87%);
+        color: #fff;
+        border: none;
+        opacity:100%;
+    }
+    .btndanger:hover{
+        opacity:90%;
+    }
+    .col-md-6.textwrap {
+    position: relative;
+}
+    .col-md-12.textwrap {
+    position: relative;
+}
+b.leveltext {
+    position: absolute;
+    color: #000;
+    top: 39%;
+    left: 7%;
+}
+.col-md-12.textwrap .leveltext {
+    position: absolute;
+    color: #000;
+    top: 39%;
+    left: 1%;
+}
+    .francy-btn {
+        border-radius: 40px!important;
+        position: relative;
+        white-space: nowrap;
+        padding: 15px 65px 15px 42px!important;
+    }
+    .francy-btn:after {
+        content: "\f061";
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        height: 42px;
+        width: 42px;
+        background: #fff;
+        color: #f94f4f;
+        border-radius: 50%;
+        display: block;
+        font-size: 1.4em;
+        padding-top: 6px;
+    }
+    .theme-default .nivoSlider img {
+        width:100%;
+        height:600px!important;
+    }
+
+   div#competetion h2 {
+    font-family: 'Hind Siliguri'!important;
+}
+    .vission-parallax-box{
+position: relative;
+text-align: start;
+top: 200px;
+left: 250px;
+color: rgb(247, 244, 244);
+ max-width: 500px;
+ height: 140px;
+ transform: translate(-50%, -50%);
+ background: rgb(8, 7, 7);
+ opacity: .7;
+ border-radius: 5px;
+}
+.vission-parallax-text{
+  margin-left: 35px;
+  margin-top: 10px;
+}
+.vission-parallax-box h4{
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: 3px;
+}
+@media (max-width: 525px) {
+  .vission-parallax-box{
+    max-width: 350px;
+    height: 120px;
+    left: 200px;
+  }
+  .vission-parallax-box h4{
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+}
+@media (max-width: 375px) {
+  .vission-parallax-box{
+    max-width: 270px;
+    height: 110px;
+    left: 130px;
+  }
+  .vission-parallax-box h4{
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+  .vission-parallax-text{
+    margin-left: 20px;
+    margin-top: 8px;
+    margin-bottom: 5px;
+  }
+}
+
+.vission-text h2{
+  position: relative;
+   font-family: 'Nunito', sans-serif;
+ }
+ .vission-text h2::before{
+   content: '';
+   display: block;
+   height: 5px;
+   width: 128px;
+   background: rgb(20, 197, 220);
+   position: absolute;
+   left: 0;
+  top: -8px;
+  border-radius: 8px;
+ }
+ .vission-text h2 span{
+     color:crimson;
+ }
+ .vission-text p{
+   font-size: 18px;
+   font-family: 'Hind Siliguri'!important;
+ }
+ .vission-img{
+   width: 100%;
+   height: 400px;
+   padding: 20px;
+
+ }
+ .vission-img img{
+   top:0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   size: cover;
+   border-radius: 5px;
+   margin-left: 35px;
+   box-shadow: 5px 4px 6px 4px rgb(87, 75, 75);
+ }
+
+@media (max-width: 575px) {
+  .vission-img{
+    height: 270px;
+  }
+  .vission-img img{
+   margin-left: 10px;
+  }
+  .vission-text p{
+    font-size: 15px;
+  }
+
+}
+
+@media (max-width: 375px) {
+  .vission-img{
+    height: 290px;
+    width: 300px;
+
+  }
+  .vission-img img{
+    margin-left: 0px;
+  }
+    .vission-text p{
+      font-size: 11px;
+    }
+
+}
+
+ .mission-img{
+  width: 97%;
+  height:380px;
+  padding: 20px 15px 15px 10px;
+ }
+ .mission-img img{
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  size: cover;
+  border-radius: 5px;
+  box-shadow: 4px 6px 5px rgb(71, 60, 60);
+ }
+
+ @media (max-width: 575px) {
+  .mission-img{
+    height: 300px;
+
+    margin-left: 15px;
+  }
+  .mission-tex p{
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 375px) {
+  .mission-img{
+    height: 180px;
+    margin-left: 15px;
+  }
+  .mission-tex p{
+    font-size: 11px;
+  }
+  }
+
+
+.mission-tex p{
+  font-size: 18px;
+   font-family: 'Hind Siliguri'!important;
+   height:370px;
+  overflow-y: scroll;
+  padding: 0 10px;
+}
+.mission-tex p span{
+    color:rgb(20, 197, 220);
+    font-size:23px;
+}
+ .mission-tex h2{
+  position: relative;
+   font-family: 'Nunito', sans-serif;
+ }
+ .mission-tex h2::before{
+   content: '';
+   display: block;
+   height: 5px;
+   width: 128px;
+   background: rgb(20, 197, 220);
+   position: absolute;
+   left: 0;
+  top: -8px;
+  border-radius: 8px;
+ }
+.mission-tex h2 span{
+    color :crimson;
+}
+div#orangeModalSubscription .modal-dialog {
+    max-width: 800px!important;
+}
+
+div#CompetetionModalSubscription .modal-dialog {
+    max-width: 800px!important;
+}
+#specialgust .modal-dialog{
+     max-width: 800px!important;
+}
+    .Register-froms{
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    }
+    .resgister-from-containar{
+        max-width: 900px;
+        margin: 0 auto;
+        width: 100%;
+        background-color: #fff;
+        padding: 25px 30px;
+        border-radius: 5px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    }
+    .resgister-from-title h2{
+        text-align: center;
+        font-size: 30px;
+        font-weight: 600;
+        padding: 15px 0;
+       font-family: 'Hind Siliguri'!important;
+    }
+    .user-info label{
+        font-size: 18px;
+        font-weight: 600;
+        color: rgb(216, 133, 167);
+        font-family: 'Hind Siliguri';
+    }
+    .user-info  input{
+        height: 45px;
+        width: 100%;
+        outline: none;
+        font-size: 16px;
+        border-radius: 5px;
+        padding-left: 15px;
+        border: 1px solid #ccc;
+        border-bottom-width: 2px;
+        transition: all 0.3s ease;
+
+    }
+    .user-info  input:focus,
+    .user-info  input:valid{
+        border-color: #9b59b6;
+    }
+    form .courses-details{
+        padding-top: 10px;
+    }
+    form .courses-details .course-select-title{
+        font-size: 20px;
+        font-weight: 500;
+        color: indigo;
+
+    }
+    form .category{
+        display: flex;
+        width: 80%;
+        margin: 14px 0 ;
+        justify-content: space-between;
+    }
+    form .category label{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    form .category label .dot{
+        height: 18px;
+        width: 18px;
+        border-radius: 50%;
+        margin-right: 10px;
+        background: #d9d9d9;
+        border: 5px solid transparent;
+        transition: all 0.3s ease;
+    }
+    #dot-1:checked ~ .category label .one,
+    #dot-2:checked ~ .category label .two,
+    #dot-3:checked ~ .category label .three{
+        background: #9b59b6;
+        border-color: #d9d9d9;
+    }
+    form input[type="radio"]{
+        display: none;
+    }
+    form .registion-button{
+        height: 45px;
+        margin: 35px 0
+    }
+    form .registion-button input{
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+        border: none;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    }
+    form .registion-button input:hover{
+        /* transform: scale(0.99); */
+        background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+    }
+
+
+    .Register-froms{
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    }
+    .resgister-from-containar{
+        max-width: 900px;
+        margin: 0 auto;
+        width: 100%;
+        background-color: #fff;
+        padding: 25px 30px;
+        border-radius: 5px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    }
+    .resgister-from-title h2{
+        text-align: center;
+        font-size: 30px;
+        font-weight: 600;
+        padding: 15px 0;
+
+    }
+    .user-info label{
+        font-size: 18px;
+        font-weight: 600;
+        color: rgb(216, 133, 167);
+    }
+    .user-info  input{
+        height: 45px;
+        width: 100%;
+        outline: none;
+        font-size: 16px;
+        border-radius: 5px;
+        padding-left: 15px;
+        border: 1px solid #ccc;
+        border-bottom-width: 2px;
+        transition: all 0.3s ease;
+
+    }
+    .user-info  input:focus,
+    .user-info  input:valid{
+        border-color: #9b59b6;
+    }
+    form .courses-details{
+        padding-top: 10px;
+    }
+    form .courses-details .course-select-title{
+        font-size: 20px;
+        font-weight: 500;
+        color: indigo;
+
+    }
+    form .category{
+        display: flex;
+        width: 80%;
+        margin: 14px 0 ;
+        justify-content: space-between;
+    }
+    form .category label{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    form .category label .dot{
+        height: 18px;
+        width: 18px;
+        border-radius: 50%;
+        margin-right: 10px;
+        background: #d9d9d9;
+        border: 5px solid transparent;
+        transition: all 0.3s ease;
+    }
+    #dot-1:checked ~ .category label .one,
+    #dot-2:checked ~ .category label .two,
+    #dot-3:checked ~ .category label .three{
+        background: #9b59b6;
+        border-color: #d9d9d9;
+    }
+    form input[type="radio"]{
+        display: none;
+    }
+    form .registion-button{
+        height: 45px;
+        margin: 35px 0
+    }
+    form .registion-button input{
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+        border: none;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    }
+    form .registion-button input:hover{
+        /* transform: scale(0.99); */
+        background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+    }
+
+
+
+    .video-eidet{
+        background: rgb(116, 69, 160);
+        padding: 26px 0;
+    }
+    .vieo-eidet-course-img{
+        width: 85%;
+        height: auto;
+        margin: 0 auto;
+    }
+    .vieo-eidet-course-img img{
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        box-shadow: 5px 6px 4px rgb(66, 46, 46);
+    }
+    .video-eidet-coures-btn{
+        width: 85%;
+        margin: 14px auto;
+        text-align: center;
+        padding: 10px 10px;
+        background: linear-gradient(135deg, #71b7e6, #9b59b6);
+        border-radius: 5px;
+        box-shadow: 3px 2px 4px 3px #7e2a3c;
+    }
+    .video-eidet-coures-btn a{
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 600;
+        padding: 10px 80px;
+        cursor: pointer;
+        font-family: 'Hind Siliguri'!important;
+    }
+    @media (max-width: 780px) {
+        .video-eidet-coures-btn a{
+            padding: 10px 60px;
+        }
+    }
+    @media (max-width: 525px) {
+        .video-eidet-coures-btn a{
+            padding: 12px 60px;
+        }
+
+    }
+    @media (max-width: 370px) {
+        .video-eidet-coures-btn a{
+            padding: 10px 30px;
+        }
+    }
+    .video-eide-coures-text{
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+        box-shadow: 5px 6px 5px 4px  rgb(45, 65, 55);
+        padding: 8px;
+        background: white;
+        border-radius: 5px;
+    }
+    .video-eide-coures-text p{
+        font-size: 16px;
+        font-family: 'Hind Siliguri'!important;
+    }
+    .video-eide-coures-text p span{
+        font-size: 22px;
+        color: rgb(223, 104, 25);
+    }
+
+.slide-caption-btn a{
+    font-family: 'Hind Siliguri'!important;
+}
+.google-img{
+    width: 95%;
+        height: auto;
+        margin: 0 auto;
+}
+.google-img img{
+     left: 0;
+        top: 0;
+        width: 100%;
+        height: 400px;
+        border-radius: 5px;
+        box-shadow: 5px 6px 4px rgb(66, 46, 46);
+
+}
+.google-text{
+   width:95% !important;
+}
+.google{
+
+    background: linear-gradient(
+        45deg
+        , #4289FF 0%, #07F8C3 100%);
+    padding: 26px 0;
+
+}
+
+.site-heading h2{
+    font-family: 'Hind Siliguri'!important;
+}
+
+.francy-btn{
+   font-family: 'Hind Siliguri'!important;
+}
+
+.user-info label {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(216, 133, 167);
+    text-align: left;
+    padding:12px 0;
+    margin-left:8px;
+}
+
+  .youtub-views .youtub-view-all-btn a{
+        text-decoration: none;
+        font-size: 17px;
+        padding: 8px 12px;
+        border: 3px solid rgb(20, 143, 180);
+        display: inline-block;
+        border-radius: 5px;
+        color: black;
+        font-weight: 600;
+        margin-top: 8px;
+
+      }
+      .youtub-views .youtub-view-all-btn a i{
+          background-color:none;
+          padding:0;
+
+      }
+     .youtub-views a:hover{
+      background: linear-gradient(
+45deg
+ , #4289FF 0%, #07F8C3 100%);
+ color: #fff;
+ border: none;
+     }
+   @media (max-width: 525px) {
+         .youtub-views .youtub-view-all-btn a{
+             font-size: 11px;
+        padding: 6px 9px;
+         }
+       .card-title{
+           margin:12px;
+       }
+
+    }
+
+      .fb-group-btn{
+      width: 95%;
+        height: 62px;
+      background: linear-gradient(135deg, #71b7e6, #9b59b6);
+      display:flex;
+      justify-content: space-between;
+      border-radius: 40px;
+      margin:0 auto;
+      box-sizing: border-box;
+  }
+     .fb-group-btn p{
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      padding:0 6px;
+     margin-top: 6px;
+     margin-left: 15px;
+     font-family: 'Hind Siliguri'!important;
+  }
+  .fb-group-btn a{
+     margin:0 22px;
+     padding: 5px 14px;
+     text-decoration: none;
+     background: rgb(250, 248, 248);
+     color: black;
+     font-size: 15px;
+     font-weight: 600;
+     border-radius: 5px;
+     margin-top:0px;
+  }
+  .fb-group-btn a:hover{
+      background: rgb(26, 117, 160);
+      color: rgb(245, 240, 240);
+  }
+   @media (max-width: 550px) {
+    .fb-group-btn{
+        display: inline-block;
+        box-sizing: border-box;
+        justify-content: center;
+        height: auto;
+    }
+
+    }
+
+   .fb-page{
+            width: 350px;
+            height: auto;
+            box-shadow: 1px 1px 1px 1px  rgb(202, 197, 197);
+            margin:0 auto;
+        }
+        .fb-page .fb-page-ing a img{
+            width: 100%;
+            height: 200px;
+            top: 0;
+            left: 0;
+            size: cover;
+
+        }
+ .fb-page .fb-page-title p{
+       text-align: center;
+ }
+</style>
+@endsection
+@section('bodyclass')
+  class="archive post-type-archive post-type-archive-product woocommerce woocommerce-page body_style_wide top_style_header_1 body_filled article_style_stretch layout_excerpt template_excerpt scheme_original top_panel_show top_panel_above sidebar_show sidebar_right sidebar_outer_hide  "
+
+@endsection
+
+    @section('content')
+        <!-- Notice -->
+
+        <div class="container-fluid">
+            @foreach($headline as $news)
+            <div class="row mt-3">
+                <div class="col-lg-2"><h5 class="bg-danger text-light text-center p-2" style="font-family: 'Hind Siliguri', sans-serif;">বিজ্ঞপ্তি</h5></div>
+                <div class="col-lg-10 ">
+                    <marquee class="bg-dark" behavior="" direction="" scrollamount="4" style="font-family: 'Hind Siliguri', sans-serif;"><p class=" text-light text-center h5 pt-2"> {{$news->news}} </p> </marquee>
+                </div>
+            </div>
+            @endforeach
+        </div>
+
+  <section class="allartmessage">
+       <div class="container">
+              @if ($errors->any())
+        <div class="alert ">
+            <ul>
+
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{-- <li>{{ $error }}</li> --}}
+                    দুঃখিত ? আপনার রেজেস্ট্রিশন সফল হয় নি ! রেজেস্ট্রিশনের   সকল তথ্য  দিয়ে আবার পুনরায় রেজেস্ট্রিশন করুন ।
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+
+
+            </ul>
+        </div>
+    @endif
+        @if (session('specialguestapplication'))
+
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('specialguestapplication') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+
+
+    @endif
+           @if (session('courseapplication'))
+           <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('courseapplication') }}
+                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+           @endif
+               @if (session('competetionapplication'))
+               <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('competetionapplication') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+           @endif
+       </div>
+   </section>
+
+
+        {{--            Nivo SLider--}}
+
+
+
+        <div class="theme-default">
+            <section id="Nivo-Slider">
+                <div id="slider" class="nivoSlider">
+                    @foreach($allslider as $row)
+                    <img src="{{asset("frontend/assets/images/$row->image")}}" data-thumb="http://charity-is-hope.themerex.net/wp-content/uploads/2016/09/slider_1_3.jpg" alt="image"
+                         title="
+                            <div class='container'>
+                                  <div class='slide-caption-warap'>
+                                    <div class='slide-caption-title'>
+                                        <h1 style='font-family: Hind Siliguri;'>{{$row->title}} </h1>
+                                        <p style='font-family: Hind Siliguri; font-size:17px;'>{{$row->pragraph}}    </p>
+                                     </div>
+                                       <div class='slide-caption-btn'>
+                                       <a class='donateslidebtn first_button' href='{{$row->btnurl}}'>{{$row->btnname}}</a>
+                                       </div>
+
+                                 </div>
+                            </div>
+                            "
+                    />
+
+                    @endforeach
+
+
+                </div>
+            </section>
+        </div>
+        
+      <section class="video-eidet pb-4">
+                   <div class="container">
+                 
+        
+                           <div class="site-heading text-center pb-3 pt-4">
+                               <h2 style="color:#fff">বিশেষ <span class="text-warning">অতিথিদের</span> আলোচনায় যুক্ত হোন </h2>
+                                   <h4 style="color:#fff">_____Serve Human Foundation_____</h4>
+                                </div>
+                                <div class="row">
+                        <div class="col-md-6">
+                               <div class="vieo-eidet-course-img">
+                                   <img src="{{asset('frontend/assets/img')}}/comok-hasan.jpeg" alt=""  style="height:350px"  class="img-fluid">
+                                </div>
+        
+                              <div class="video-eidet-coures-btn mt-4">
+                                  <a href="https://forms.gle/RoJGs42oiB1K7cV48" target="_blank">রেজিস্ট্রেশন করুন</a>
+                               </div>
+                          </div>
+        
+                         <div class="col-md-6">
+                               <div class="video-eide-coures-text">
+                                 <p style='font-family: Hind Siliguri;'>
+                                    বন্ধুরা !!
+আমরা একটা বিষয়ে চমক রেখেছি !!!
+২০ আগস্ট শুক্রবার ২০২১ বাংলাদেশ সময় রাত ৯ টায়
+আমাদের সাথে যুক্ত হবেন বিশেষ একজন অতিথি। 
+হয়তো আপনারা তাকে চিনেন। 
+এখনই তাঁর নাম বলতে চাই না।
+
+তাঁর সাথে লাইভ আলোচনায় যুক্ত হতে চান !!!
+শুধু আলোচনা নয়, হবে একটুখানি ক্যারিয়ার আড্ডা-গল্প-গান। 
+আপনিও যুক্ত হতে পারেন তাঁর সাথে।
+আমরা আপনাকে সেই সুযোগ করে দিবো। 
+
+তাঁর সাথে যুক্ত হতে চাইলে এক্ষুনি রেজিস্ট্রেশন করে ফেলুন।
+
+আমরা আছি 
+এবং লাইভ ক্যারিয়ার আলোচনায় থাকবো
+সাথে থাকবেন আপনিও !!!
+রেজিস্ট্রেশন কারীদের মধ্য হতে 
+প্রথম ১০০০ জন পাবেন 
+সরাসরি অংশগ্রহণের জুম আইডি এবং পাসওয়ার্ড! 
+অংশগ্রহণকারীদের মধ্য হতে 
+বেশকিছু জনকে সরাসরি প্রশ্ন করার 
+সুযোগ প্রদান করা হবে।
+আমাদের ফেসবুক গ্রুপে (hwww.facebook.com/groups/servehumanfoundation) যুক্ত হয়ে 
+আপনি অগ্রিম প্রশ্ন পাঠাতে পারেন। 
+
+প্রশ্নের সাথে দিবেন নিজের একটা ছবি 
+অথবা পছন্দের যে কোনো একটা ছবি। 
+অনুষ্ঠান শেষেও 
+আমাদের সার্ভ হিউম্যান ফাউন্ডেশন এর ফেসবুক গ্রুপে 
+অনুষ্ঠানে অংশগ্রহণের স্ক্রিনশটসহ 
+মতামত লিখে ফিডব্যাক প্রদান করা যাবে।
+
+রেজিস্ট্রেশন এর সর্বশেষ সময়
+২০ আগস্ট শুক্রবার ২০২১ রাত ৮:৩০ মিনিট (বাংলাদেশ সময়)।
+    
+        
+                               </div>
+                           </div>
+                      </div>
+                    </div>
+               </section>
+        
+        
+<!--
+ <section class="google" id="googles">
+    <div class="container">
+
+        <div class="row pb-5">
+          <div class="site-heading text-center pb-3 pt-4">
+            <h2 style="color:#fff;">বিশেষ অতিথিদের আলোচনায় যুক্ত হোন</h2>
+                <h4>_____Serve Human Foundation_____</h4>
+            </div>
+            <div class="col-md-6">
+                <div class="video-eide-coures-text google-text">
+                    <p>গুগলের সফটওয়্যার ইঞ্জিনিয়ার
+জুলকারনাইন মাহমুদ
+এর সাথে সরাসরি অনলাইন সেমিনারে যুক্ত হবার সুযোগ।
+২৭ জুন রবিবার, ২০২১ বাংলাদেশ সময় রাত ০৯:০০ টায়
+সার্ভ হিউম্যান ফাউন্ডেশন আয়োজন করেছে অনলাইনে ক্যারিয়ার সেমিনার।
+আলোচনার বিষয়ঃ
+জীবনে সফলতা চাইলে নিজেকে দক্ষ ও যোগ্য করে গড়ে তুলতে হবে।
+এই আলোচনায় প্রধান আলোচক হিসেবে উপস্থিত থাকবেন
+বাংলাদেশের তরুণ প্রজন্মের আইডল –
+গুগলের সফটওয়্যার ইঞ্জিনিয়ার
+জুলকারনাইন মাহমুদ।
+কিভাবে বাংলাদেশের তরুণ প্রজন্ম তথ্য-প্রযুক্তিতে দক্ষতা অর্জন করে দেশে বিদেশে তাদের উজ্জ্বল ক্যারিয়ার গড়তে পারবে এবং নিজের মেধা ও সৃজনশীলতাকে কাজে লাগিয়ে বর্তমান পৃথিবীতে টিকে থাকবে এই সকল বিষয় নিয়ে বিভিন্ন প্রশ্ন-উত্তরের মাধ্যমে প্রাণবন্ত এই অনলাইন সেমিনারে যুক্ত থাকতে পারবেন আপনিও।
+এই সেমিনারে থাকবে সরাসরি প্রশ্ন করার সুযোগ এবং সেরা ১০ জন প্রশ্নকারীকে সার্ভ হিউম্যান ফাউন্ডেশন
+এর পক্ষ থেকে বিজয়ী হিসেবে পুরস্কৃত করা হব। অনুষ্ঠানে যুক্ত হত চাইলে রেজিস্ট্রেশন রুন।।
+আজ ২৭জুন রোজ রবিবার রাত ৯ঃ০০টায়  গুগলের সফটওয়্যার ইঞ্জিনিয়ার জুলকারনাইন মাহমুদ এর সাথে সরাসরি অনলাইন সেমিনার হতে যাচ্ছে। <br>
+Link :  <a href="https://tinyurl.com/rf83ppe5" style="text-decoration: none;" target="_blank"> https://tinyurl.com/rf83ppe5</a> <br>
+ID: 833 8227 0408 <br>
+Pass: ServeHuman <br>
+                 <span>+8801703-099169</span> <br>
+                 <span>+8801752-637979</span>
+                   </p>
+
+                </div>
+
+              </div>
+
+          <div class="col-md-6">
+            <div class="google-img mt-2">
+               <img src="https://scontent.fdac11-1.fna.fbcdn.net/v/t1.6435-9/199080831_957556001691916_6703035528310838754_n.jpg?_nc_cat=103&ccb=1-3&_nc_sid=730e14&_nc_eui2=AeHyqXE9x-5TgsYh1HQbpUCb4Rwqee-VxAzhHCp575XEDMrfhCCxQ5WX3L0CI6gdWRWSt0knfL7b0WqC8-0h4_mN&_nc_ohc=OvA6uW7m55cAX9JulKP&_nc_ht=scontent.fdac11-1.fna&oh=ef46417e1c9a6522e829694f3394e910&oe=60D22882" alt="">
+            </div>
+            <div class="video-eidet-coures-btn mt-4">
+                <div class="easy-checkout-modal"></div>
+
+                        <div class="modal fade" id="specialgust" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                             aria-hidden="true">
+                            <div class="modal-dialog modal-notify modal-warning" role="document">
+
+                                <div class="modal-content">
+
+
+
+                                    <div class="modal-body">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true" class="white-text">&times;</span>
+                                        </button>
+                                        <div class="Register-froms">
+                                            <div class="resgister-from-containar">
+                                                <form method="post" action="{{route('specialguestsreg')}}">
+@csrf
+                                                   <div class="resgister-from-title">
+                                                    <h2>রেজিস্ট্রেশন করুন </h2>
+                                                  </div>
+                                                 <div class="user-info">
+                                                  <div class="row py-2">
+                                                    <div class="col-md-6 input-box">
+                                                      <label for="validationCustom01" class="form-label"> আপনার  নাম </label>
+                                                      <input type="text" name="name" class="form-control " id="validationCustom01"  placeholder="Your Name" required="">
+
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                      <label for="validationCustom01" class="form-label">ফোন নম্বর</label>
+                                                      <input type="Phone Number" name="phoneno" class="form-control " id="validationCustom01"  placeholder="Enter Your Phone Number" required="">
+
+                                                    </div>
+                                                  </div>
+
+                                                  <div class="row py-2">
+                                                    <div class="col-md-6">
+                                                      <label for="validationCustom01" class="form-label">আপনার ইমেইল</label>
+                                                      <input type="email" name="email" class="form-control " id="validationCustom01"  placeholder="Enter Your Email" required="">
+
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                      <label for="validationCustom01" class="form-label">আপনার ঠিকানা</label>
+                                                      <input type="text" name="address" class="form-control " id="validationCustom01"  placeholder=" Your Address" required="">
+
+                                                    </div>
+                                                  </div>
+                                                <div class="row">
+                                                  <div class="col-md-6">
+                                                    <label for="validationCustom01" class="form-label">শিক্ষাগত যোগ্যতা</label>
+                                                    <select name="qualification" class="form-select" aria-label="Default select example">
+
+                                                        <option selected value="SSC">SSC</option>
+                                                        <option value="HSC">HSC</option>
+                                                        <option value="BA/Hon's">BA/Hon's</option>
+                                                        <option value="Others">Others</option>
+
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6">
+                                                  <label for="validationCustom01" class="form-label">শিক্ষাপ্রতিষ্ঠানের নাম</label>
+                                                  <input type="text" name="collagename" class="form-control " id="validationCustom01"  placeholder="Educational Institution's Name" required="">
+
+                                                </div>
+                                                </div>
+
+                                                    <div class="registion-button">
+                                                      <input type="submit" value="রেজিস্ট্রেশন করুন">
+                                                    </div>
+                                                 </div>
+                                                   </form>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="modal-footer justify-content-center">
+                                        <button type="button" style=" padding: 5px 10px!important; background: red!important;" class= " btn btn-danger close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true" class="white-text text-light">&times;</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <a href="#" data-toggle="modal" data-target="#specialgust">রেজিষ্ট্রেশন করুন</a>
+                </div>
+          </div>
+        </div>
+      </div>
+   </section>
+-->
+
+
+
+
+
+
+
+        <!-- our courses section start -->
+   <section class="py-4" style="background:rgba(208, 236, 211, 0.83);">
+
+     <div class="container"  id="course_btns">
+        <div class="row">
+            <div class="site-heading text-center pb-3 pt-4">
+            <h2>চতুর্থ ব্যাচের <span>  রেজিষ্ট্রেশন   </span>চলছে </h2>
+                <h4>_____Serve Human Foundation_____</h4>
+            </div>
+            @foreach($course as $allcourse)
+            <div id="course" class="col-lg-12"><p style="border:1px solid black;font-family: 'Hind Siliguri', sans-serif; padding:10px; margin-top:10px; font-size:17px;">
+                শুভেচ্ছা🤩 ফ্রিল্যান্সিং প্রশিক্ষণের ধারাবাহিক পর্বের চতুর্থ ব্যাচের রেজিষ্ট্রেশন ৪ আগস্ট বুধবার , ২০২১ থেকে শুরু হয়েছে ।  ২৫ আগস্ট বুধবার রাত  ১১.৫৯ টা    পর্যন্ত আমাদের রেজিস্ট্রেশন কার্যক্রম চলমান থাকবে। আগামী ১ সেপ্টেম্বর বুধবার   ২০২১ রাত ০৯:০০ টায় আমাদের চতুর্থ ব্যাচের অরিয়েন্টেশন এবং উদ্বোধনী অনুষ্ঠান অনুষ্ঠিত হবে।
+            </br>
+        </br>
+            ফর্ম পূরণের নিয়মাবলিঃ<u class="hedtext"> রেজিষ্ট্রেশন ফি প্রদান করার পর ফর্ম পূরণ করতে হবে।</u>
+
+            </br>
+            ১. যারা প্রশিক্ষণ পর্বে অংশগ্রহন করতে আগ্রহী, তাদেরকে ফর্মে বর্ণিত  রেজিষ্ট্রেশন ফি  বিকাশ, রকেট, নগদ (নাম্বার যুক্ত করে দেওয়া আছে) নাম্বারে প্রদান করতে .
+            </br></br>
+             ২. রেজিষ্ট্রেশন ফর্ম পূরণ করার সময় যত্ন সহকারে নিজের নাম, নিজের ইমেইল এড্রেস , নিজের মোবাইল নাম্বার, যেই নাম্বার থেকে টাকা পাঠিয়েছেন সেই নাম্বার, নিজের ছবি আপলোড, টাকা পাঠানোর স্ক্রিনশট আপলোড, টি-শার্টের মাপ, কুরিয়ার পাবার ঠিকানা ইত্যাদি তথ্যগুলো নির্ভুলভাবে প্রদান করতে হবে।
+            </br></br>
+            ৩.  <u class="hedtext">  ফর্ম পূরণ শেষ হলে উক্ত নাম্বারে ফোন করে কনফার্ম হতে হবে।</u>
+            </br></br>
+             প্রতি সপ্তাহে দুইদিন প্রশিক্ষণের বিষয়গুলো নিয়ে ক্লাস হবে।  সপ্তাহে একদিন বাধ্যতামূলক ইংরেজী ক্লাস হবে। সপ্তাহের আর একদিন সাপোর্ট সেশন চালু থাকবে। যারা প্র্যাকটিস করতে গিয়ে সমস্যার সম্মুখীন হবেন তারা নির্দিষ্ট সময়ে সাপোর্ট সেশন থেকে সমস্যার সমাধান করতে পারবেন।
+            </br></br>
+             ৪. আমাদের ১নং, ২নং , ৩নং , ৪নং,  ৫নং  কোর্সের মেয়াদ ০৩ (তিন) মাস। ভালফলাফল কারী দের জন্য আরো এক মাস সুপারক্লাব । </br>
+                  এবং  ৬নং , ৭নং, ৮নং কোর্সের মেয়াদ ০১ (এক ) মাস। </br>
+                 এবং  ৯নং ও ১০নং কোর্সের মেয়াদ ০২ (দুই) মাস।  </br>
+                 এবং  ১১নং ও  ১২নং কোর্সের মেয়াদ ০৩+০১ (তিন+এক) মাস।  </br>
+            </br>
+              কোর্স শেষে ভালো পার্ফমেন্সকারীদের নিয়ে স্পেশাল এক (০১) মাসের সুপার ক্লাব গঠন করা হবে এবং এডভান্সড কিছু বিষয় নিয়ে আলোচনা থাকবে এবং ইন্টার্ণীশীপ পাওয়ার ব্যাপারে যথাযথ প্রশিক্ষণ প্রদান করা   হবে। </br>
+            </br>
+             ৫.  প্রতিটি কোর্সেই একদম শূন্য থেকে শুরু করে হাতে কলমে কাজ শিখিয়ে ফ্রিল্যান্সিং মার্কেটপ্লেস এবং দেশ ও দেশের বাইরে মাল্টিন্যাশনাল কোম্পানিগুলোতে ইন্টারভিউ এবং জব করার মতো যোগ্যতা অর্জন করার যথাযথ প্রশিক্ষণ ও গাইডলাইন প্রদান করা হবে।</br></br>
+
+              যদি আপনি  ধৈর্য্য ধরে আগ্রহ সহকারে কোর্স করার মন-মানসিকতা না রাখেন বা আপনার  অলস সময় কাটাতে ইচ্ছে করে বা এসাইনমেন্টগুলো করার সময় না থাকে বা রেগুলার ক্লাস করার ইচ্ছা না থাকে এবং সর্বোপরি শেখার আগ্রহ না থাকে তবে আপনাকে এই কোর্সে অংশগ্রহন না করার জন্য বিশেষভাবে অনুরোধ করা হচ্ছে। </br>
+            </br>
+            বিকাশ  01798-160825 (পার্সোনাল) এ সেন্ড মানি করতে হবে ।</br></br>
+
+            নগদ  01798-160825 (পার্সোনাল) এ সেন্ড মানি করতে হবে ।</br></br>
+
+            রকেট 01798-160 825 4 (পার্সোনাল) এ সেন্ড মানি করতে হবে ।</br></br>
+
+             ৬. সফলভাবে কোর্স সমাপ্তকারী প্রশিক্ষণার্থীদের সার্ভ হিউম্যান ফাউন্ডেশন এবং ওয়ার্ল্ড এডুকেশন কানাডার যৌথ আয়োজনে একটি আন্তর্জাতিক মানের সার্টিফিকেট প্রদান করা হবে । </br>
+                </p></div>
+            <div class="col-lg-12">
+                <div class="bgprimary shadow d-lg-flex align-items-center text-center justify-content-lg-between pb-4 pb-lg-1 p-1 text-white">
+                    <h5 class="m-0 p-3 p-lg-0 pl-lg-4 text-center text-white">{{$allcourse->title}}</h5>
+                    <div class="easy-checkout-modal"></div>
+                    <!--modal start-->
+                    <div class="modal fade" id="orangeModalSubscription" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                         aria-hidden="true">
+                        <div class="modal-dialog modal-notify modal-warning" role="document">
+                            <!--Content-->
+                            <div class="modal-content">
+                                <!--Header-->
+
+                                <!--Body-->
+                                <div class="modal-body">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true" class="white-text">&times;</span>
+                                    </button>
+                                    <div class="Register-froms">
+                                        <div class="resgister-from-containar">
+                                            <form method="post" action="{{route('forthcourse_reg')}}" enctype="multipart/form-data" >
+                                               @csrf
+                                                <div class="resgister-from-title">
+                                                    <h2>রেজিস্ট্রেশন করুন </h2>
+                                                </div>
+                                                <div class="user-info">
+                                                    <div class="row py-2">
+                                                        <div class="col-md-6 input-box">
+                                                            <label for="validationCustom01" class="form-label">আপনার নাম </label>
+                                                            <input type="text" name="first_name" class="form-control @error('title') is-invalid @enderror" id="validationCustom01"  placeholder="Your Full Name" required>
+
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="validationCustom01" class="form-label">আপনার ইমেইল</label>
+                                                            <input type="email" name="email" class="form-control  @error('email') is-invalid @enderror" id="validationCustom01"  placeholder="Enter Your Email" required>
+                                                            @error('email')
+                                                            <span class="invalid-feedback" role="alert">
+                                                                  <strong>{{ $message }}</strong>
+                                                             </span>
+                                                            @enderror
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="row py-2">
+                                                        <div class="col-md-6">
+                                                            <label for="validationCustom01" class="form-label">আপনার ফোন নম্বর (আবেদনকারী )</label>
+                                                            <input type="Phone Number" name="phone" class="form-control @error('title') is-invalid @enderror" id="validationCustom01"  placeholder="Enter Your Phone Number" required>
+                                                             @error('title')
+                                                            <span class="invalid-feedback" role="alert">
+                                                                  <strong>{{ $message }}</strong>
+                                                             </span>
+                                                            @enderror
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="validationCustom01" class="form-label"> যে নাম্বার থেকে টাকা পাঠিয়েছেন</label>
+                                                            <input type="text" name="bkashphone" class="form-control @error('title') is-invalid @enderror" id="validationCustom01"  placeholder="Enter Your Send Money Number" required>
+
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row py-2">
+                                                        <div class="col-md-6">
+                                                            <label for="validationCustom01" class="form-label">টাকা পাঠানোর স্ক্রিনশট </label>
+                                                            <input type="file" name="transictionid" class="form-control @error('title') is-invalid @enderror" id="validationCustom01"   required>
+
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="validationCustom01" class="form-label"> আপনার ছবি </label>
+                                                            <input type="file" name="yourpic" class="form-control @error('title') is-invalid @enderror" id="validationCustom01"   required>
+
+                                                        </div>
+
+
+                                                    </div>
+
+                                                     <div class="row">
+                                                        <div class="col-md-6 textwrap">
+                                                            <label for="validationCustom01" class="form-label">আপনার কোর্স নির্বাচন করুন</label>
+                                                        <b class="leveltext">রেজিষ্ট্রেশন ফি সহ </b>
+                                                            <select name="course" class="form-select" aria-label="Default select example">
+
+                                                                <option selected value="Web Design">1. Web Design = 500tk (3+1 month)</option>
+                                                                <option value="Digital Marketing">2. Digital Marketing = 500tk (3+1 month)</option>
+                                                                <option value="Graphic Design">3. Graphic Design = 500tk (3+1 month)</option>
+                                                                <option value="Basic English">4. Basic English = 500tk (3+1 month)</option>
+                                                                <option value="Bengali Article Writing">5. Bengali Article Writing = 500tk (3+1 month)</option>
+                                                                <option value="Excel Basic to Advance">6. Excel Basic to Advance = 500tk ( 1 month)</option>
+                                                                <option value="WordPress Crash Course">7. WordPress Crash Course = 1000tk (1 month)</option>
+                                                                <option value="Video editing">8. Video editing = 2000tk (1 month)</option>
+                                                                <option value="English for Freelancing">9. English for Freelancing = 2000tk (2 month)</option>
+                                                                <option value="CV Writing and Interview">10. CV Writing and Interview = 2000tk (2 month)</option>
+                                                                <option value="Advanced Laravel">11. Advanced Laravel = 5000tk (3+1 month)</option>
+                                                                <option value="3D Animation">12. 3D Animation = 5000tk (3+1 month)</option>
+                                                            </select>
+                                                        </div>
+                                                           <div class="col-md-6">
+
+                                                      <label for="validationCustom01" class="form-label">আপনার টি-শার্টের মাপ</label>
+                                                      <select name="teshirt" class="form-select" aria-label="Default select example">
+
+                                                          <option selected value="SM">SM</option>
+                                                          <option value="M">M</option>
+                                                          <option value="L">L</option>
+                                                          <option value="XL">XL</option>
+                                                          <option value="XXL">XXL</option>
+                                                      </select>
+                                                  </div>
+
+
+
+                                                     </div>
+                                                     <div class="col-md-12 textwrap">
+                      
+                                                        <label for="validationCustom01" class="form-label">আপনার কুপন কোড</label>
+                                                                                           <b class="leveltext">আপনার কুপন কোড থাকলে
+কোড নাম্বার লিখুন।
+না থাকলে না লিখুন।</b>
+                                                        <input type="text" name="refarcode" class="form-control @error('refarcode') is-invalid @enderror " id="validationCustom01"  placeholder=" If You Have a Coupon Code, Enter The Code Number. If Not, Write No." required>
+
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <label for="validationCustom01" class="form-label">আপনার ঠিকানা</label>
+                                                        <input type="text" name="address" class="form-control @error('title') is-invalid @enderror " id="validationCustom01"  placeholder=" Your Address" required>
+
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <label for="validationCustom01" class="form-label">ডাকযোগের (পোস্ট অফিসের) মাধ্যমে যোগাযোগের ঠিকানা</label>
+                                                        <input type="text" name="courier" class="form-control @error('title') is-invalid @enderror" id="validationCustom01"  placeholder=" Contact address by post office" required>
+                                                        <input type="hidden" name="batch" class="form-control " id="validationCustom01"  value="batch-4">
+
+                                                    </div>
+
+
+
+
+                                                    <div class="registion-button">
+                                                        <input type="submit" value="Register">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <!--Footer-->
+                                <div class="modal-footer justify-content-center">
+                                    <button type="button" style=" padding: 5px 10px!important; background: red!important;" class= " btn btn-danger close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true" class="white-text text-light">&times;</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <!--/.Content-->
+                        </div>
+                    </div>
+                    <!--modal end-->
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdcXtVb_odanFYFuHUJGLQqGEqCcDxqjU8JXdPfTSeDBtwjBA/viewform"><button class="btn francy-btn btndanger" data-toggle="modal" data-target="#">রেজিস্ট্রেশন করুন</button></a>
+
+                </div>
+            </div>
+            @endforeach
+        </div>
+        <div class="fb-group-btn py-3">
+            <p> পরবর্তী আপডেট পেতে আমাদের Facebook Group যুক্ত হোন </p>
+             <a href="https://www.facebook.com/groups/servehumanfoundation" target="_blank">Facebook Group</a>
+        </div>
+
+    </div>
+
+
+
+    <!-- our courses end -->
+
+
+
+{{--
+     <div class="container"  id="course_btns">
+        <div class="row">
+            <div class="site-heading text-center pb-3 pt-4">
+            <h2>তৃতীয় ব্যাচের <span>  রেজিষ্ট্রেশন   </span>চলছে </h2>
+                <h4>_____Serve Human Foundation_____</h4>
+            </div>
+            @foreach($course as $allcourse)
+            <div id="course" class="col-lg-12"><p style="border:1px solid black;font-family: 'Hind Siliguri', sans-serif; padding:10px; margin-top:10px; font-size:17px;">
+                    {{$allcourse->paragraph}}
+                </p></div>
+            <div class="col-lg-12">
+                <div class="bgprimary shadow d-lg-flex align-items-center text-center justify-content-lg-between pb-4 pb-lg-1 p-1 text-white">
+                    <h5 class="m-0 p-3 p-lg-0 pl-lg-4 text-center text-white">{{$allcourse->title}}</h5>
+                    <div class="easy-checkout-modal"></div>
+                    <!--modal start-->
+                    <div class="modal fade" id="orangeModalSubscription" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                         aria-hidden="true">
+                        <div class="modal-dialog modal-notify modal-warning" role="document">
+                            <!--Content-->
+                            <div class="modal-content">
+                                <!--Header-->
+
+                                <!--Body-->
+                                <div class="modal-body">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true" class="white-text">&times;</span>
+                                    </button>
+                                    <div class="Register-froms">
+                                        <div class="resgister-from-containar">
+                                            <form method="post" action="{{route('course_reg')}}" novalidate="" enctype="multipart/form-data" >
+                                               @csrf
+                                                <div class="resgister-from-title">
+                                                    <h2>রেজিস্ট্রেশন করুন </h2>
+                                                </div>
+                                                <div class="user-info">
+                                                    <div class="row py-2">
+                                                        <div class="col-md-6 input-box">
+                                                            <label for="validationCustom01" class="form-label">আপনার নাম </label>
+                                                            <input type="text" name="first_name" class="form-control " id="validationCustom01"  placeholder="Your Full Name" required="">
+
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="validationCustom01" class="form-label">আপনার ইমেইল</label>
+                                                            <input type="email" name="email" class="form-control  @error('email') is-invalid @enderror" id="validationCustom01"  placeholder="Enter Your Email" required="">
+                                                            @error('email')
+                                                            <span class="invalid-feedback" role="alert">
+                                                                  <strong>{{ $message }}</strong>
+                                                             </span>
+                                                            @enderror
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="row py-2">
+
+                                                        <div class="col-md-6">
+                                                            <label for="validationCustom01" class="form-label"> যে নাম্বার থেকে টাকা পাঠিয়েছেন</label>
+                                                            <input type="text" name="bkashphone" class="form-control " id="validationCustom01"  placeholder="Enter Your Send Money Number" required="">
+
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="validationCustom01" class="form-label">টাকা পাঠানোর স্ক্রিনশট </label>
+                                                            <input type="file" name="transictionid" class="form-control " id="validationCustom01"   required="">
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="row py-2">
+
+                                                        <div class="col-md-6">
+                                                            <label for="validationCustom01" class="form-label">আপনার কোর্স নির্বাচন করুন</label>
+                                                            <select name="course" class="form-select" aria-label="Default select example">
+
+                                                                <option selected value="Web Design">Web Design</option>
+                                                                <option value="Digital Marketing">Digital Marketing</option>
+                                                                <option value="Graphic Design">Graphic Design</option>
+                                                                <option value="English for Freelancing">English for Freelancing</option>
+                                                                <option value="Basic English">Basic English</option>
+                                                                <option value="Bengali Article Writing">Bengali Article Writing</option>
+                                                                <option value="Video editing">Video editing</option>
+                                                                <option value="WordPress Crash Course">WordPress Crash Course</option>
+                                                                <option value="Advanced Laravel">Advanced Laravel</option>
+                                                                <option value="CV Writing and Interview">CV Writing and Interview</option>
+                                                                <option value="Excel Basic to Advance">Excel Basic to Advance</option>
+                                                                <option value="3D Animation">3D Animation</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="validationCustom01" class="form-label"> আপনার ছবি </label>
+                                                            <input type="file" name="yourpic" class="form-control " id="validationCustom01"   required="">
+
+                                                        </div>
+                                                    </div>
+
+                                                     <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label for="validationCustom01" class="form-label">ফোন নম্বর</label>
+                                                            <input type="Phone Number" name="phone" class="form-control " id="validationCustom01"  placeholder="Enter Your Phone Number" required="">
+
+                                                        </div>
+                                                           <div class="col-md-6">
+
+                                                      <label for="validationCustom01" class="form-label">আপনার টি-শার্টের মাপ</label>
+                                                      <select name="teshirt" class="form-select" aria-label="Default select example">
+
+                                                          <option selected value="SM">SM</option>
+                                                          <option value="M">M</option>
+                                                          <option value="L">L</option>
+                                                          <option value="XL">XL</option>
+                                                          <option value="XXL">XXL</option>
+                                                      </select>
+                                                  </div>
+
+
+
+                                                     </div>
+
+
+                                                    <div class="col-md-12">
+                                                        <label for="validationCustom01" class="form-label">আপনার ঠিকানা</label>
+                                                        <input type="text" name="address" class="form-control " id="validationCustom01"  placeholder=" Your Address" required="">
+
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <label for="validationCustom01" class="form-label">কুরিয়ার প্রাপ্তির ঠিকানা</label>
+                                                        <input type="text" name="courier" class="form-control " id="validationCustom01"  placeholder=" Courier receiving address" required="">
+                                                        <input type="hidden" name="batch" class="form-control " id="validationCustom01"  value="batch-3">
+
+                                                    </div>
+
+
+
+
+                                                    <div class="registion-button">
+                                                        <input type="submit" value="Register">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <!--Footer-->
+                                <div class="modal-footer justify-content-center">
+                                    <button type="button" style=" padding: 5px 10px!important; background: red!important;" class= " btn btn-danger close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true" class="white-text text-light">&times;</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <!--/.Content-->
+                        </div>
+                    </div>
+                    <!--modal end-->
+                    <a href="#"><button class="btn francy-btn btndanger" data-toggle="modal" data-target="#orangeModalSubscription">রেজিস্ট্রেশন করুন</button></a>
+
+                </div>
+            </div>
+            @endforeach
+        </div>
+
+         <div class="fb-group-btn py-3">
+            <p> পরবর্তী আপডেট পেতে আমাদের Facebook Group যুক্ত হোন </p>
+             <a href="https://www.facebook.com/groups/servehumanfoundation" target="_blank">Facebook Group</a>
+        </div>
+
+    </div> --}}
+
+
+
+    <!-- our courses end -->
+
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-lg-4 my-2 "><img src="https://servehumanfoundation.org/frontend/assets/images/logo.png" alt=""></div>
+            <div class="col-lg-4  my-2"><img src="https://i.ibb.co/Hx0X9QK/20210524-215445.jpg" alt=""></div>
+            <div class="col-lg-4  my-2"><img src="https://i.ibb.co/cD6V7gk/20210524-220757.jpg" alt=""></div>
+
+        </div>
+        </div>
+    </section>
+    <!-- our courses section End -->
+
+    {{--Video Edit --}}
+<!--        <section class="video-eidet pb-4">-->
+<!--            <div class="container">-->
+<!--                <div class="row">-->
+
+<!--                     <div class="site-heading text-center pb-3 pt-4">-->
+<!--                         <h2 style="color:#fff">ভিডিও <span class="text-warning">এডিটিং</span> শিখুন</h2>-->
+<!--                            <h4 style="color:#fff">_____Serve Human Foundation_____</h4>-->
+<!--                          </div>-->
+
+<!--                    <div class="col-md-6">-->
+<!--                        <div class="vieo-eidet-course-img">-->
+<!--                            <img src="{{asset('frontend/assets/img')}}/video-course.jpeg" alt=""  style="height:350px"  class="img-fluid">-->
+<!--                        </div>-->
+
+<!--                        <div class="video-eidet-coures-btn mt-4">-->
+<!--                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdfJVS5UV2H3Ir35jaEZG4tUKBFkPiKfWIlhRALHcuCvvMHIg/viewform" target="_blank">রেজিস্ট্রেশন করুন</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="col-md-6">-->
+<!--                        <div class="video-eide-coures-text">-->
+<!--                            <p style='font-family: Hind Siliguri;'>অ্যাওয়ার্ড উইনার ফিল্ম মেকার  <br> MHM MUBASSIR এর কাছ থেকে ভিডিও এডিটিং শিখুন: <br>-->
+<!--                                বর্তমানে সবচেয়ে জনপ্রিয়-->
+<!--                                ভিডিও এডিটিং কোর্স শিখে-->
+<!--                                মাত্র এক মাসেই আপনি হয়ে উঠুন-->
+<!--                                একজন দক্ষ ভিডিও এডিটর এবং জায়গা-->
+<!--                                করে নিন অনলাইন মার্কেটপ্লেসে।-->
+<!--                                ডেস্কটপ অথবা ল্যাপটপ অথবা যেকোনো স্মার্টফোনের মাধ্যমেও ভিডিও এডিটিং এর এই ক্রাশ কোর্স করা সম্ভব।-->
+<!--                                কম্পিউটারের এডিটিং সফটওয়্যারের পাশাপাশি স্মার্টফোনের-->
+<!--                                এডিটিং সফটওয়্যারও বিশদ ভাবে শেখানো হবে।-->
+<!--                                এই কোর্সে-->
+<!--                                প্রথম, দ্বিতীয় ও তৃতীয় স্থান অধিকারীর জন্য যথাক্রমে ৫০০০/৩০০০/২০০০ টাকার পুরস্কারসহ রিয়েল লাইফ প্রজেক্ট করার সুযোগ থাকবে।-->
+<!--                                সর্বমোট আসন মাত্র ৫০ (পঞ্চাশ) টি।-->
+<!--                                আগামী ২৪ জুন বৃহস্পতিবার, ২০২১ পর্যন্ত রেজিস্ট্রেশন লিংক খোলা থাকবে।-->
+<!--                                ২৫ জুন থেকে ক্লাস শুরু এবং-->
+<!--                                স্টুডেন্টরা ২০০০ টাকার এই কোর্স ১০০০ টাকা ছাড়ে ১০০০ টাকায় করার সুযোগ পাচ্ছেন।-->
+<!--                                (রেজিস্ট্রেশনকারী প্রথম ২৫ জন স্টুডেন্টকে বিশেষ ছাড়ের এই সুযোগ দেওয়া হবে)-->
+<!--                                প্রশিক্ষণ শেষে সকল প্রশিক্ষনার্থীদের জন্য থাকবে-->
+<!--                                 "সার্ভ হিউম্যান ফাউন্ডেশন" এবং "ওয়ার্ল্ড এডুকেশন কানাডা"এর যৌথ উদ্যোগে সার্টিফিকেট । <br>-->
+<!--                                রেজিস্ট্রেশন এর জন্য সরাসরি যোগাযোগ:-->
+<!--<br>-->
+<!--                                <span>+8801703-099169</span>-->
+<!--<br>-->
+<!--                                <span>+8801752-637979</span>-->
+<!--                            </p>-->
+
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                </div>-->
+<!--            </div>-->
+<!--        </section>-->
+
+
+
+
+
+    <div class="container  mt-4">
+        <div class="row">
+            <div  id="competetion" class="site-heading text-center pb-3 pt-5">
+                <h2> উপস্থিত বক্তৃতা<span> প্রতিযোগিতা</span></h2>
+                <h4>_____Serve Human Foundation_____</h4>
+            </div>
+            @foreach($competetion as $allcompetetion)
+            <div class="col-lg-12">
+                <div class="bgprimary shadow d-lg-flex align-items-center text-center justify-content-lg-between pb-4 pb-lg-1 p-1 text-white">
+                    <h5 class="m-0 p-3 p-lg-0 pl-lg-4 text-center text-white">
+                        {{$allcompetetion->title}}
+                    </h5>
+                    <div class="easy-checkout-modal"></div>
+                    <!--modal start-->
+                    <div class="modal fade" id="CompetetionModalSubscription" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                         aria-hidden="true">
+                        <div class="modal-dialog modal-notify modal-warning" role="document">
+                            <!--Content-->
+                            <div class="modal-content">
+                                <!--Header-->
+
+                                <!--Body-->
+                                <div class="modal-body">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true" class="white-text">&times;</span>
+                                    </button>
+                                    <div class="Register-froms">
+                                        <div class="resgister-from-containar">
+                                            <form action="{{route('competetionapplication')}}" method="post">
+                                                @csrf
+                                                <div class="resgister-from-title">
+                                                    <h2>রেজিস্ট্রেশন করুন </h2>
+                                                </div>
+                                                <div class="user-info">
+                                                    <div class="row py-2">
+                                                        <div class="col-md-6 input-box">
+                                                            <label for="validationCustom01" class="form-label">নামের প্রথম অংশ</label>
+                                                            <input type="text" name="frist_name" class="form-control " id="validationCustom01"  placeholder="Your First Name" required="">
+
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="validationCustom01" class="form-label">নামের শেষাংশ</label>
+                                                            <input type="text" name="last_name" class="form-control " id="validationCustom01"  placeholder="Your Last Name" required="">
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row py-2">
+                                                        <div class="col-md-6">
+                                                            <label for="validationCustom01" class="form-label">আপনার ইমেইল</label>
+                                                            <input type="email" name="email" class="form-control  @error('email') is-invalid @enderror" id="validationCustom01"  placeholder="Enter Your Email" required="">
+                                                            @error('email')
+                                                            <span class="invalid-feedback" role="alert">
+                                                                  <strong>{{ $message }}</strong>
+                                                             </span>
+                                                            @enderror
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="validationCustom01" class="form-label">ফোন নম্বর</label>
+                                                            <input type="Phone Number" name="phone" class="form-control " id="validationCustom01"  placeholder="Enter Your Phone Number" required="">
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12 py-2">
+                                                        <label for="validationCustom01" class="form-label">আপনার ঠিকানা</label>
+                                                        <input type="text" name="address" class="form-control " id="validationCustom01"  placeholder=" Your Address" required="">
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-6 py-2">
+                                                            <label for="validationCustom01" class="form-label">শিক্ষাগত যোগ্যতা</label>
+                                                            <input type="text" name="edu_quali" class="form-control " id="validationCustom01"
+                                                                   placeholder="Educational qualification " required="">
+                                                        </div>
+
+                                                        <div class="col-md-6 py-2">
+                                                            <label for="validationCustom01" class="form-label">ডিপার্টমেন্ট</label>
+                                                            <input type="text" name="department" class="form-control " id="validationCustom01" placeholder="Department or Subject"
+                                                                   required="">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12 py-2">
+                                                        <label for="validationCustom01" class="form-label">শিক্ষা প্রতিষ্ঠান </label>
+                                                        <input type="text" name="collagename" class="form-control " id="validationCustom01" placeholder=" Educational institution"
+                                                               required="">
+                                                    </div>
+
+                                                    <div class="registion-button">
+                                                        <input type="submit" value="Submit">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <!--Footer-->
+                                <div class="modal-footer justify-content-center">
+                                    <button type="button" style=" padding: 5px 10px!important; background: red!important;" class= " btn btn-danger close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true" class="white-text text-light">&times;</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <!--/.Content-->
+                        </div>
+                    </div>
+                    <!--modal end-->
+                    <a href="#"><button class="btn francy-btn btndanger" data-toggle="modal" data-target="#CompetetionModalSubscription">রেজিস্ট্রেশন করুন</button></a>
+
+                </div>
+            </div>
+            <div class="col-lg-12"><p style="border:1px solid black;font-family: 'Hind Siliguri', sans-serif; padding:10px; margin-top:10px; font-size:17px">{{$allcompetetion->paragraph}}</p></div>
+            @endforeach
+        </div>
+    </div>
+    <!-- our courses end -->
+        <section>
+            <div class="container">
+              <div class="row g-0 pt-5">
+                <div class="col-sm-6 col-md-6">
+                  <div class="vission-text px-2">
+                    <h2>Our <span>M</span>ission</h2>
+                    <p>
+                      Provides programs and services that develop young leaders, support educators, and advance in the field of the service-learning sector and also Promoting good citizenship in the home, school, and community through service and leadership opportunities.
+                        The objectives  for which  the society is established are all or any of the following and all the government / concerned authority / competent authority and the objectives contrary to the provision of section 20 of the society registration act shall be treated as ineffective. This foundation shall function considering the state policy and overall public interest and if will not arrange, support or take part in any such activities which disregard the state rule and create society disorder.
+                      </p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                 <div class="vission-img ms-2">
+                  <img src="{{asset('frontend/assets/img/event_1.jpg')}}" class="img-fluid" alt="">
+                 </div>
+                </div>
+              </div>
+
+              <div class="row g-0 py-5 my-2">
+                <div class=" col-md-6 col-sm-12">
+                 <div class="mission-img">
+                  <img src="{{asset('frontend/assets/img/mission.jpg')}}" class="img-fluid" alt="">
+                 </div>
+                </div>
+                <div class="col-sm-6 col-md-6 rocx">
+                  <div class="mission-tex px-2 mt-2">
+                    <h2>Our <span>V</span>ision</h2>
+                    <p>
+                       <span>সা</span>র্ভ হিউম্যান ফাউন্ডেশন একটি অলাভজনক, অরাজনৈতিক ও স্বেচ্ছাসেবী সংস্থা। এই সংস্থা ২০১৬ সাল থেকে শুরু করে আজ অবধি তার স্বেচ্ছাসেবা মূলক কাজ অব্যাহত রেখেছে।
+ সার্ভ হিউম্যান ফাউন্ডেশন এ দেশের তরুণদের দক্ষতা উন্নয়ন ও বিকাশে কাজ করছে। বিগত বছরগুলোতে আমরা বিভিন্ন ধরনের প্রশিক্ষণ ও বিদেশী ভাষা শিক্ষা কার্যক্রম পরিচালনা করেছি।
+২০২০ সালের শুরুতে সারা বিশ্বে কোভিড-19 মহামারী জনজীবন বিপর্যস্ত করলে আমরা আমাদের কার্যক্রমে কিছুটা পরিবর্তন এনেছি। আমাদের কার্যক্রমের মধ্যে অনলাইনে তরুণদের দক্ষতা উন্নয়ন ও বিকাশে বিভিন্ন প্রশিক্ষণ কার্যক্রম যুক্ত করেছি। এই প্রশিক্ষণ গুলোর মধ্যে রয়েছে ওয়েব ডিজাইন এবং ডেভেলপমেন্ট, গ্রাফিক্স ডিজাইন, ডিজিটাল মার্কেটিং, ভিডিও এডিটিং, ইংলিশ স্পোকেন কোর্স, ফ্রী ফ্রিল্যান্সারদের জন্য বিশেষ ইংরেজি কোর্সসহ ইংরেজি ভাষা শেখার বিভিন্ন ধরনের কোর্স কার্যক্রম।
+সার্ভ হিউম্যান ফাউন্ডেশন মনে করে আগামীতে এই পৃথিবীতে যারা টিকে থাকবেন তাদেরকে দক্ষ এবং যোগ্য হয়েই সর্বক্ষেত্রে জায়গা করে নিতে হবে।
+বাংলাদেশ একটি জনবহুল দেশ।
+এদেশে রয়েছে বিপুল জনসম্পদ।
+এবং এদের বেশির ভাগই তরুণ এবং যুবক।
+বাংলাদেশ যদি এই তরুণদের দক্ষ এবং যোগ্য করে গড়ে তুলতে পারে তবে আগামী পাঁচ বছরের মধ্যে আমাদের দেশ একটি সমৃদ্ধশালী দেশ হিসেবে পৃথিবীর বুকে জায়গা করে নেবে।
+আমরা আমাদের দেশের তরুণদের সঠিক পথে পরিচালনা করতে এবং তাদেরকে দক্ষ হিসেবে এবং যোগ্য করে গড়ে তোলার কাজে সহায়ক ভূমিকা পালন করছি।
+
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </section>
+
+        <div class="ceo-section">
+            <div class="container">
+                <h2>______Message of President & CEO  and General Secretary______</h2>
+                <div class="row">
+                    @foreach($allceo as $ceo)
+                    <div class="col-md-6 float-left">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="ceo-image"><img src="{{asset("frontend/assets/images/$ceo->image")}}" alt="">
+
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-lg-offset-1">
+                                <div class="ceo-text">
+                                    <h3 class="font-weight-bold">{{$ceo->name}}</h3>
+                                    <b class="mb-4">{{$ceo->title}}</b>
+                                    <p class="text-end">
+                                        <i class="h2 text-success fas fa-quote-left"></i>
+
+                                        {{$ceo->paragraph}}
+                                        <i class="h2 text-success  fas fa-quote-right"></i>
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+
+            </div>
+        </div>
+
+ <section class="volunters mb-3">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="site-heading text-center pt-5">
+                                <h2>Our &nbsp<span>VOLUNTEERS</span></h2>
+                                <h4>_____Serve Human Foundation_____</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+                        @foreach($voulenteer as $vou)
+
+                            <div class="col">
+                                <div class="p-1  bg-light">
+                                    <div class="volunter-imges">
+                                        <img src="{{asset("frontend/assets/images/$vou->image")}}" class="img-fluid" alt="">
+                                    </div>
+
+                                    <div class="volunter-content">
+                                        <h5>{{$vou->name}}</h5>
+                                        <p>From:  {{$vou->district}}</p>
+                                        <p>Joining date :  {{$vou->created_at}}</p>
+                                    </div>
+                                    <a href="#" class="text-center d-block mb-2 mt-2" data-toggle="modal" data-target="#exampleModalCenterVolunteer{{$vou->id}}">
+                                        <button class="btn btn-sucess">View</button>
+                                    </a>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="ExploreBtn pt-4 pb-4"><a class="btn btn-outline-danger" href="{{route('ourvolunters')}}">Explore All</a> </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal start -->
+
+                <!-- Modal -->
+                @foreach($voulenteer as $vou)
+                    <div class="modal mt-5 mb-3 fade" id="exampleModalCenterVolunteer{{$vou->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Volunteer Details</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <table class="table table-bordered">
+                                        <thead>
+                                        <img src="{{asset("frontend/assets/images/$vou->image")}}" alt="">
+                                        <tr class="text-secondary">
+                                            <td scope="row"">Name:</td>
+                                            <td>{{$vou->name}}</td>
+                                        </tr>
+
+                                        <tr class="text-secondary">
+                                            <td scope="row"">Mobile No:</td>
+                                            <td>{{$vou->mobaailno}}</td>
+                                        </tr>
+                                        <tr class="text-secondary">
+                                            <td scope="row"">Email:</td>
+                                            <td>{{$vou->email}}</td>
+                                        </tr>
+                                        <tr class="text-secondary">
+                                            <td scope="row"">District:</td>
+                                            <td>{{$vou->district}}</td>
+                                        </tr>
+                                        <tr class="text-secondary">
+                                            <td scope="row"">Upazilla:</td>
+                                            <td>{{$vou->upazilla}}</td>
+                                        </tr>
+                                        <tr class="text-secondary">
+                                            <td scope="row"">Educational Qualification:</td>
+                                            <td>{{$vou->qualification}}</td>
+                                        </tr>
+                                        <tr class="text-secondary">
+                                            <td scope="row"">Blood Group:</td>
+                                            <td>{{$vou->bldgrp}}</td>
+                                        </tr>
+                                        <tr class="text-secondary">
+                                            <td scope="row"">Joining Date:</td>
+                                            <td>{{$vou->created_at}}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+
+
+            </section>
+
+
+    <section class="Youtube-Video py-5">
+    <div class="container">
+        <div class="site-heading text-center pb-3 pt-4">
+            <h2 style="text-transform: capitalize;">Our <span>Youtube</span> Videos</h2>
+               <h4>_____Serve Human Foundation_____</h4>
+             </div>
+
+        <div class="row py-3">
+            <div class="youtub-views" style="display: flex;">
+                   <h5 class="card-title pb-2 m-3" style="text-transform: capitalize;">Web Design & Development</h5>
+                 <div class="youtub-view-all-btn"> <a href="https://www.youtube.com/watch?v=OoOe_VCZw_k&list=PL7x-YRDwky-4QxMiPmiiTYGDnjlGBNTan" class="btn" target="_blank">View More <i class="fas fa-chevron-right"></i></a></div>
+             </div>
+
+          <div class="col-sm shadow-lg p-2 mb-5 mx-3 bg-body rounded">
+            <iframe style="width: 100%; height: 265px!important;" height="260" src="https://www.youtube.com/embed/rVJ5DP9xSD8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="col-sm shadow-lg p-2 mb-5 mx-3 bg-body rounded">
+            <iframe style="width: 100%; height: 265px!important;"  height="260" src="https://www.youtube.com/embed/K-LQMSsLJDQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="col-sm shadow-lg p-2 mb-5 mx-3 bg-body rounded">
+            <iframe style="width: 100%; height: 265px!important;"  height="260" src="https://www.youtube.com/embed/uZAw5zu-TF0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="row py-3">
+              <div class="youtub-views" style="display: flex;">
+                  <h5 class="card-title pb-2 m-3" style="text-transform: capitalize;">Digital Marketing Course</h5>
+                    <div class="youtub-view-all-btn"> <a href="https://www.youtube.com/watch?v=SuDK3KJDnj4&list=PL7x-YRDwky-42NCHgWg2aHu-nHum-bCQx"class="btn" target="_blank">View More  <i class="fas fa-chevron-right"></i></a></div>
+                  </div>
+
+          <div class="col-sm shadow-lg p-2 mb-5 mx-3 bg-body rounded"><iframe style="width: 100%; height: 265px!important;"  height="260" src="https://www.youtube.com/embed/SuDK3KJDnj4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="col-sm shadow-lg p-2 mb-5 mx-3 bg-body rounded"><iframe style="width: 100%; height: 265px!important;"  height="260" src="https://www.youtube.com/embed/92v3nWU8qCI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="col-sm shadow-lg p-2 mb-5 mx-3 bg-body rounded"><iframe style="width: 100%; height: 265px!important;"  height="260" src="https://www.youtube.com/embed/fmYgTFeBABQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        </div>
+
+        <div class="row py-3">
+
+             <div class="youtub-views" style="display: flex;">
+           <h5 class="card-title pb-2 m-3" style="text-transform: capitalize;">Graphic Design  Course</h5>
+                <div class="youtub-view-all-btn"> <a href="https://www.youtube.com/watch?v=-sJPEasfkGo&list=PL7x-YRDwky-5RKFDWiUs884Rt5T4ybaLy" class="btn" target="_blank">View More  <i class="fas fa-chevron-right"></i></a></div>
+               </div>
+          <div class="col-sm shadow-lg p-2 mb-5 mx-3 bg-body rounded"><iframe style="width: 100%; height: 265px!important;"  height="260" src="https://www.youtube.com/embed/-sJPEasfkGo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="col-sm shadow-lg p-2 mb-5 mx-3 bg-body rounded"><iframe style="width: 100%; height: 265px!important;"  height="260" src="https://www.youtube.com/embed/co73dn9y8ik" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="col-sm shadow-lg p-2 mb-5 mx-3 bg-body rounded"><iframe style="width: 100%; height: 265px!important;"  height="260" src="https://www.youtube.com/embed/qaxqWN5dU_I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        </div>
+
+        <div class="row py-3">
+            <div class="youtub-views" style="display: flex;">
+             <h5 class="card-title pb-2 m-3" style="text-transform: capitalize;">English for Freelancing</h5>
+                  <div class="youtub-view-all-btn"> <a href="https://www.youtube.com/watch?v=Fel6uGWUdhk&list=PL7x-YRDwky-6dhHt0_nnd5Hl7OVH5mC9o" class="btn" target="_blank">View More  <i class="fas fa-chevron-right"></i></a></div>
+             </div>
+          <div class="col-sm shadow-lg p-2 mb-5 mx-3 bg-body rounded"><iframe style="width: 100%; height: 265px!important;"  height="260" src="https://www.youtube.com/embed/5VlDCjmVecc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="col-sm shadow-lg p-2 mb-5 mx-3 bg-body rounded"><iframe style="width: 100%; height: 265px!important;"  height="260" src="https://www.youtube.com/embed/8-wJpT4vUew" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="col-sm shadow-lg p-2 mb-5 mx-3 bg-body rounded"><iframe style="width: 100%; height: 265px!important;"  height="260" src="https://www.youtube.com/embed/mNK64BqORek" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        </div>
+
+          <div class="row py-3">
+            <div class="youtub-views" style="display: flex;">
+             <h5 class="card-title pb-2 m-3" style="text-transform: capitalize;">Our Seminar</h5>
+                  <div class="youtub-view-all-btn"> <a href="https://www.youtube.com/watch?v=nQWgqckVFjg&list=PL7x-YRDwky-4MVc0lbovxs7GQRV0IS2s8" class="btn" target="_blank">View More  <i class="fas fa-chevron-right"></i></a></div>
+             </div>
+          <div class="col-sm shadow-lg p-2 mb-5 mx-3 bg-body rounded"><iframe style="width: 100%; height: 290px!important;"  height="260" src="https://www.youtube.com/embed/YsH6aHZrmmM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+           <div class="col-sm shadow-lg p-2 mb-5 mx-3 bg-body rounded"><iframe style="width: 100%; height: 290px!important;"  height="260" src="https://www.youtube.com/embed/nQWgqckVFjg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+        </div>
+
+      </div>
+</section>
+
+
+
+
+        <!-- Our youtube channel & facebook start-->
+
+        <div id="course" class="container">
+            <div class="row">
+                <div class="col-lg-6 text-center">
+                     <h2 class="text-center">Our Facebook  page</h2>
+                    <hr>
+                    <br>
+
+                      <div class="fb-page">
+           <div class="fb-page-ing">
+               <a href="https://www.facebook.com/servehumanfoundationbangladesh" target="_blank"><img src="https://scontent.fdac11-2.fna.fbcdn.net/v/t1.6435-9/33595639_213248916122632_1953268078733164544_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=e3f864&_nc_ohc=sNR5ViLYg_cAX_qepUu&_nc_ht=scontent.fdac11-2.fna&oh=12ef66efcb182adb4d11a363296d48ff&oe=60E197A7" alt=""></a>
+           </div>
+           <div class="fb-page-title">
+             <h6>Serve Human Foundation Bangladesh</h6>
+             <p>2,409 people liked us</p>
+           </div>
+           <a href="https://www.facebook.com/servehumanfoundationbangladesh" target="_blank" class="btn btn-light px-5 shadow p-1 mb-1 bg-body rounded"> <i class="fas fa-thumbs-up"></i> Please Like</a>
+       </div>
+
+                </div>
+
+                <div class="col-lg-6 text-center">
+                    <h2 class="text-center">Our Facebook  Group</h2>
+                      <hr>
+                    <br>
+                    <div class="row">
+{{--                            <div class="col-md-12 ">--}}
+{{--                                <h4> Facebook Page</h4>--}}
+
+{{--                            <div class="w-100">--}}
+
+{{--                                <div class="fb-page" data-href="https://www.facebook.com/servehumanfoundationbangladesh/" data-tabs="" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/servehumanfoundationbangladesh/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/servehumanfoundationbangladesh/">Serve Human Foundation</a></blockquote></div>--}}
+{{--                            </div>--}}
+{{--                            </div>--}}
+                        <div class="col-md-12">
+
+
+                        <div class="w-100">
+                            <div class="fb-group" data-href="https://www.facebook.com/groups/servehumanfoundation/" data-width="350" data-show-social-context="true" data-show-metadata="false"><blockquote cite="https://www.facebook.com/groups/servehumanfoundation/" class="fb-xfbml-parse-ignore">Serve Human Foundation</blockquote></div>
+
+                        </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Our youtube channel & facebook end-->
+
+
+    @endsection
+    @section('costomjs')
+
+        <script type="text/javascript">
+            $(window).load(function() {
+                $('#slider').nivoSlider();
+            });
+
+
+
+
+        </script>
+
+
+
+    @endsection
